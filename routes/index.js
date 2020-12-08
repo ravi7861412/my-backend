@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const User = require('./../api/controllers/UserController');
+const gamer= require('./../api/controllers/gameController');
 
 /* Define your routes here */
 
@@ -19,8 +20,8 @@ router.get('/user-info',function(req,res,next) {
 router.post('/create-user-address', function(req, res, next) {
    User.createUserAddress(req, res);
 });
-router.get('/entry', function(req, res, next) {
-   User.enterGame(req, res);
+router.post('/entry', function(req, res, next) {
+   gamer.enterGame(req, res);
 });
 
 router.get('/read-all', function(req, res, next) {
