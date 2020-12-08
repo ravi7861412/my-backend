@@ -15,8 +15,8 @@ module.exports={
                contestFee -= discount;
              let wal=data[0].winning+data[0].bonus+data[0].deposit;
        
-             if(contestFee>0.1*data[0].bonus+data[0].deposit+data[0].winning){
-          
+             if(contestFee>0.1*contestFee+data[0].deposit+data[0].winning||contestFee>wal){
+               
                 return res.status(400).send({ 'status': 400, 'message': 'Not enough money in your fanFightWallet' });
                                }
             else{

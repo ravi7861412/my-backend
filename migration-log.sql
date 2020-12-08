@@ -64,5 +64,7 @@ VALUES(60,100,340,500);
 
 UPDATE wallet SET bonus=60,deposit=100,winning=340,fanFight_wallet=500
 WHERE id=1;
+UPDATE wallet SET bonus=2000,deposit=1000,winning=1000,fanFight_wallet=4000
+WHERE id=1;
 
 SELECT * from walletinner join mapping on wallet.id=mapping.wallet_id wHERE mapping.user_id=?
