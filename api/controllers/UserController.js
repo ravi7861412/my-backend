@@ -76,9 +76,9 @@ module.exports = {
 			let inputs = req.body;
 			const now = parseInt(Date.now()/1000);
 
-			let query = `INSERT INTO users (first_name, last_name, phone, email, created_by, created_dt, updated_by, updated_dt)
+			let query = `INSERT INTO users (first_name, last_name, phone, email,country_code,is_active, created_dt, updated_dt)
 			VALUES (?, ?, ?, ?, ?, ?, ?, ? );`;
-			let ack = await QueryService.Query(query, [inputs.first_name, inputs.last_name, inputs.phone, inputs.email, 1, now, 1, now]);
+			let ack = await QueryService.Query(query, [inputs.first_name, inputs.last_name, inputs.phone, inputs.email,inputs.country_code, 1, now, now]);
 
             return res.status(201).send({ 'status': 201, 'message': 'success', 'data': ack });
 

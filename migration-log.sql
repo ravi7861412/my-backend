@@ -66,5 +66,18 @@ UPDATE wallet SET bonus=60,deposit=100,winning=340,fanFight_wallet=500
 WHERE id=1;
 UPDATE wallet SET bonus=2000,deposit=1000,winning=1000,fanFight_wallet=4000
 WHERE id=1;
+UPDATE wallet SET bonus=4,deposit=10,winning=20,fanFight_wallet=34
+WHERE id=3;
+UPDATE wallet SET bonus=50,deposit=10,winning=15,fanFight_wallet=75
+WHERE id=4;
 
-SELECT * from walletinner join mapping on wallet.id=mapping.wallet_id wHERE mapping.user_id=?
+SELECT * from walletinner join mapping on wallet.id=mapping.wallet_id wHERE mapping.user_id=?;
+
+
+INSERT INTO users(first_name,last_name,email,phone,country_code,is_active,created_by,created_dt,updated_by,updated_dt)
+VALUES("Anjali","singh","anjalisingh987@gmail.com","9304308574","+91",1,null,null,null,null);
+
+
+UPDATE users SET country_code="+91" 
+WHERE id =2;
+
